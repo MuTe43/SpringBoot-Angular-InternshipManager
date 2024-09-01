@@ -1,7 +1,6 @@
 <h2>Created Using SpringBoot & Angular</h2>
 <ul>
-
-VSCode for FrontEnd
-Spring Tools 4 for Eclipse
-Database is initialized with Xampp
+<li>VSCode for FrontEnd</li>
+<li>Spring Tools 4 for Eclipse</li>
+<li>Database is initialized with Xampp</li>
 </ul>
