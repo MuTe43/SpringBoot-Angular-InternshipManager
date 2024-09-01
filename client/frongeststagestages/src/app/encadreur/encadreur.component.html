@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<div class="container-fluid">
+<div class="container bg-dark" >
+    <h1 class="text-white mb-4">Encadreurs</h1>
+    <ul class="list-group mb-5">
+        <li *ngFor="let encadreur of encadreurs" class="list-group-item bg-dark text-white d-flex justify-content-between align-items-center">
+            <span>{{ encadreur.nom }} {{ encadreur.prenom }} ({{ encadreur.department }})</span>
+            <button (click)="deleteEncadreur(encadreur.id!)" class="btn btn-danger btn-sm">Supprimer</button>
+        </li>
+    </ul>
+
+    <h2 class="text-white mb-3">Cree Nouveau Encadreur</h2>
+    <form (ngSubmit)="createEncadreur()" class="bg-dark p-4 rounded">
+        <div class="form-group">
+            <label class="text-white">Nom:</label>
+            <input [(ngModel)]="newEncadreur.nom" name="nom" class="form-control bg-dark text-white border-white" required />
+        </div>
+        <div class="form-group">
+            <label class="text-white">Prénom:</label>
+            <input [(ngModel)]="newEncadreur.prenom" name="prenom" class="form-control bg-dark text-white border-white" required />
+        </div>
+        <div class="form-group">
+            <label class="text-white">Email:</label>
+            <input [(ngModel)]="newEncadreur.email" name="email" class="form-control bg-dark text-white border-white" required />
+        </div>
+        <div class="form-group">
+            <label class="text-white">Département:</label>
+            <input [(ngModel)]="newEncadreur.department" name="department" class="form-control bg-dark text-white border-white" required />
+        </div>
+        <button type="submit" class="btn btn-outline-light mb-6">Creer</button>
+    </form>
+</div>
+</div>
